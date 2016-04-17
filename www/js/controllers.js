@@ -1,8 +1,15 @@
 angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope) {})
+
 .controller('MapCtrl', function($scope){
-  
+  $scope.$on("$ionicView.beforeEnter", function() {
+    console.log("Map tab control loaded");
+
+  });
+  $scope.myFunction=function(){
+    alert("function got called");
+  };
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {
