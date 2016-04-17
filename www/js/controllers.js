@@ -36,3 +36,8 @@ angular.module('starter.controllers', [])
     enableFriends: true
   };
 });
+
+angular.module("demoapp", ['leaflet-directive'])
+      .controller("BasicFirstController", [ "$scope", function($scope) {
+          // Nothing here!
+    }]);

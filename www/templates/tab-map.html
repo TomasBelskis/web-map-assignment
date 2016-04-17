@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="demoapp">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
@@ -7,8 +7,7 @@
   <script type="text/javascript" src="test.js"></script>
 
 </head>
-<body>
-
+<body ng-controller="BasicFirstController">
 <ion-view view-title="Map">
   <ion-content class="padding">
     <p>Click the button to return the value of its value attribute.</p>
@@ -16,12 +15,9 @@
     <button id="myBtn" value="myvalue" ng-click="myFunction()">Try it</button>
 
     <p id="demo"></p>
-
+    <leaflet width="100%" height="480px"></leaflet>
+        <h1>First steps, basic example</h1>
   </ion-content>
 </ion-view>
-
-
-
-
 </body>
 </html>
