@@ -13,7 +13,15 @@ angular.module('starter.controllers', [])
       lat: 51.505,
       lng: -0.09,
       zoom: 4
-    }
+    },
+    defaults:{
+      tileLayer: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
+      maxZoom: 18,
+      zoomControlPosition: 'bottomleft'
+    },
+    markers:{},
+    center:{},
+    events:{}
   });
 
   $scope.user={
@@ -26,7 +34,7 @@ angular.module('starter.controllers', [])
           defaults: {
             tileLayer: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
             maxZoom: 18,
-            zoomControlPosition: 'bottomleft'
+            zoomControlPosition: 'topleft'
           },
           markers : {},
           center : {},
