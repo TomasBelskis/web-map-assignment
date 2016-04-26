@@ -8,13 +8,14 @@ angular.module('starter.controllers', [])
 
   });
 
-  /*angular.extend($scope,{
+  angular.extend($scope,{
     user:{
       lat: 51.505,
       lng: -0.09,
       zoom: 4
     }
-  });*/
+  });
+
   $scope.user={
     lat: 51.505,
     lng: -0.09,
@@ -28,6 +29,7 @@ angular.module('starter.controllers', [])
             zoomControlPosition: 'bottomleft'
           },
           markers : {},
+          center : {},
           events: {
             map: {
               enable: ['context'],
