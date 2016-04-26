@@ -7,9 +7,20 @@ angular.module('starter.controllers', [])
     console.log("Map tab control loaded");
 
   });
-  $scope.myFunction=function(){
-    alert("function got called");
+
+  /*angular.extend($scope,{
+    user:{
+      lat: 51.505,
+      lng: -0.09,
+      zoom: 4
+    }
+  });*/
+  $scope.user={
+    lat: 51.505,
+    lng: -0.09,
+    zoom: 4
   };
+
   $scope.map = {
           defaults: {
             tileLayer: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
