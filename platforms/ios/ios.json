@@ -33,6 +33,9 @@
         },
         "cordova-plugin-compat": {
             "PACKAGE_NAME": "com.ionicframework.starter"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
         }
     },
     "dependent_plugins": {},
@@ -72,6 +75,7 @@
     ],
     "plugin_metadata": {
         "cordova-plugin-geolocation": "2.2.0",
-        "cordova-plugin-compat": "1.0.0"
+        "cordova-plugin-compat": "1.0.0",
+        "cordova-plugin-whitelist": "1.2.1"
     }
 }
