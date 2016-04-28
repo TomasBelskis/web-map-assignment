@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, $cordovaGeolocation) {
+/*.controller('DashCtrl', function($scope, $cordovaGeolocation, $ionicLoading, $ionicPlatform) {
 
   $scope.lat="0.0";
   $scope.long="0.0";
@@ -10,59 +10,85 @@ angular.module('starter.controllers', [])
   $scope.heading="0.0";
   $scope.speed="0.0";
   $scope.time="0.0";
-  
-  var posOptions = {timeout: 10000, enableHighAccuracy: false};
-     $cordovaGeolocation
-     .getCurrentPosition(posOptions)
 
-     .then(function (position) {
-        var lat  = position.coords.latitude;
-        var long = position.coords.longitude;
-        console.log(lat + '   ' + long);
-     }, function(err) {
-        console.log(err);
-     });
+  $ionicPlatform.ready(function(){
+    $ionicLoading.show({
+            template: '<ion-spinner icon="bubbles"></ion-spinner><br/>Acquiring location!'
+        });
 
-     var watchOptions = {timeout : 3000, enableHighAccuracy: false};
-     var watch = $cordovaGeolocation.watchPosition(watchOptions);
+      var posOptions = {
+           enableHighAccuracy: true,
+           timeout: 20000,
+           maximumAge: 10000
+       };
 
-     watch.then(
-        null,
+       $cordovaGeolocation
+       .getCurrentPosition(posOptions)
 
-        function(err) {
-           console.log(err);
-        },
+       .then(function (position) {
+          var lat  = position.coords.latitude;
+          var long = position.coords.longitude;
+          var alti = position.coords.altitude;
+          var accu = position.coords.accuracy;
+          var altiAcc = position.coords.altitudeAccuracy;
+          var heading = position.coords.heading;
+          var speed = position.coords.speed;
+          var time = position.timestamp;
 
-        function(position) {
-           var lat  = position.coords.latitude;
-           var long = position.coords.longitude;
-           console.log(lat + '' + long);
-        }
-     );
+          console.log(lat + '   ' + long);
+          $scope.lat=lat;
+          $scope.long=long;
+          $scope.alti=alti;
+          $scope.acc=accu;
+          $scope.altAcc=altiAcc;
+          $scope.heading=heading;
+          $scope.speed=speed;
+          $scope.time=time;
 
-     watch.clearWatch();
+          $ionicLoading.hide();
+       }, function(err) {
+          console.log(err);
+          $ionicLoading.hide();
+       });
 
-  $scope.geolocatorTest = function(){
-    navigator.geolocation.getCurrentPosition(function(position){
-      alert('Latitude: '          + position.coords.latitude          + '\n' +
-           'Longitude: '         + position.coords.longitude         + '\n' +
-           'Altitude: '          + position.coords.altitude          + '\n' +
-           'Accuracy: '          + position.coords.accuracy          + '\n' +
-           'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-           'Heading: '           + position.coords.heading           + '\n' +
-           'Speed: '             + position.coords.speed             + '\n' +
-           'Timestamp: '         + position.timestamp                + '\n');
-    });
-    $scope.lat=position.coords.latitude;
-    $scope.long=position.coords.longitude;
-    $scope.alti=position.coords.altitude;
-    $scope.acc=position.coords.accuracy;
-    $scope.altAcc=position.coords.altitudeAccuracy;
-    $scope.heading=position.coords.heading;
-    $scope.speed=position.coords.speed;
-    $scope.time=position.timestamp;
-  };
-})
+       var watchOptions = {timeout : 20000, enableHighAccuracy: true};
+       var watch = $cordovaGeolocation.watchPosition(watchOptions);
+
+       watch.then(
+          null,
+
+          function(err) {
+             console.log(err);
+             $ionicLoading.hide();
+          },
+
+          function(position) {
+             var lat  = position.coords.latitude;
+             var long = position.coords.longitude;
+             var alti = position.coords.altitude;
+             var accu = position.coords.accuracy;
+             var altiAcc = position.coords.altitudeAccuracy;
+             var heading = position.coords.heading;
+             var speed = position.coords.speed;
+             var time = position.timestamp;
+
+             console.log(lat + '' + long);
+             $scope.lat=lat;
+             $scope.long=long;
+             $scope.alti=alti;
+             $scope.acc=accu;
+             $scope.altAcc=altiAcc;
+             $scope.heading=heading;
+             $scope.speed=speed;
+             $scope.time=time;
+          }
+       );
+       $ionicLoading.hide();
+       watch.clearWatch();
+   });
+
+})*/
+.controller('DashCtrl', function($scope) {})
 
 .controller('MapCtrl', function($scope){
   $scope.$on("$ionicView.beforeEnter", function() {
