@@ -1,5 +1,15 @@
 <ion-view view-title="Map">
   <ion-content data-tap-disabled="true">
-    <leaflet id="map" defaults="map.defaults" center="map.center" makers="map.markers" ng-if="map"></leaflet>
+      
+    	<div id="arrow">
+				<canvas id="arrow-canvas"></canvas> 	
+     	</div>
+     	<div id="map-container">
+    		<leaflet id="map" event-broadcast="map.events" defaults="map.defaults" center="map.center" paths="map.pathToMarker" markers="markerArray" ng-if="map" ></leaflet>
+     	<!--<leaflet id="map" lf-center="user"></leaflet>-->
+     		<ul>
+     			<li>Distance to target: <strong >{{distanceCalc}}</strong> KM </li>
+     		</ul>
+        </div>
   </ion-content>
 </ion-view>

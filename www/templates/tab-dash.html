@@ -2,9 +2,6 @@
   <ion-content class="padding">
     <h2>Welcome to Ionic</h2>
     <p>
-    This is the Ionic starter for tabs-based apps. For other starters and ready-made templates, check out the <a href="http://market.ionic.io/starters" target="_blank">Ionic Market</a>.
-    </p>
-    <p>
       To edit the content of each tab, edit the corresponding template file in <code>www/templates/</code>. This template is <code>www/templates/tab-dash.html</code>
     </p>
     <p>
@@ -13,5 +10,16 @@
     <p>
       For help sending push notifications, join the <a href="https://apps.ionic.io/signup" target="_blank">Ionic Platform</a> and check out <a href="http://docs.ionic.io/docs/push-overview" target="_blank">Ionic Push</a>. We also have other services available.
     </p>
+    <button on-tap="geolocatorTest()" class="button">Test</button>
+    <p>Testing area</p>
+    Lat: {{lat}} </br>
+    Long: {{long}}  </br>
+    Alt: {{alti}}  </br>
+    Accur: {{acc}}  </br>
+    Alt Acc: {{altAcc}}  </br>
+    Head: {{head}}  </br>
+    Speed: {{speed}}  </br>
+    Time: {{time}}
+
   </ion-content>
 </ion-view>
